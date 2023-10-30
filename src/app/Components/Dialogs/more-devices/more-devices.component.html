@@ -1,0 +1,20 @@
+<h1 mat-dialog-title style="margin: 0 1px 1px;">More Devices</h1>
+<div mat-dialog-content style="width: 45vw; padding: 0">
+  <mat-divider></mat-divider>
+  <div style="display: flex; align-items: center;height: 200px">
+    <div class="innerItems" (click)="replaceDialogAsMoveToSite()" >
+      <!--      <mat-icon> pin_drop</mat-icon>-->
+      <b>Move to Site</b>
+    </div>
+    <div class="innerItems" (click)="replaceDialogAsMoveToCompany()">
+      <!--      <p>Logo</p>-->
+      <b>Move to Companies</b>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+</div>
+<div mat-dialog-actions>
+  <p class="CancelText" (click)="onNoClick()">Cancel</p>
+</div>
+
+

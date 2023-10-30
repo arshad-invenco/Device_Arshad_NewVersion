@@ -1,0 +1,11 @@
+.green-icon {
+  height: 5px;
+  fill: green;
+}
+
+.statusCard{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  color: darkgray;
+}

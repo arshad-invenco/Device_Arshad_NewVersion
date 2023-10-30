@@ -1,0 +1,45 @@
+
+<table style="margin: 8px" class="table table-hover">
+  <thead>
+  <tr>
+    <th  style="width: 250px" scope="col">Device & Serial Number</th>
+    <th style="width: 250px;" scope="col">Status</th>
+    <th scope="col">Location</th>
+    <th scope="col">Device Type</th>
+    <th scope="col">Restore</th>
+    <th scope="col">Data info</th>
+  </tr>
+  </thead>
+  <tbody  *ngFor="let ind of data | paginate: {itemsPerPage: 10, currentPage: p}">
+  <tr>
+    <td>
+      <app-device-serial></app-device-serial>
+    </td>
+    <td >
+      <app-unknown
+        matTooltip="{{ind.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
+        matTooltipPosition="above"
+        matTooltipClass="my-custom-tooltip"
+        aria-label="Button that displays a tooltip when focused or hovered over"
+        *ngIf="ind.status=='unknown' "></app-unknown>
+      <app-operational matTooltip="{{ind.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
+                       matTooltipPosition="above"
+                       aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="ind.status=='operational' "></app-operational>
+      <app-inactive matTooltip="{{ind.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
+                    matTooltipPosition="above"
+                    aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="ind.status=='inactive' "></app-inactive>
+      <app-out-of-service matTooltip="{{ind.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
+                          matTooltipPosition="above"
+                          aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="ind.status=='out of service' "></app-out-of-service>
+    </td>
+    <td>{{ind.location}}</td>
+    <td>{{ind.deviceType}}</td>
+    <td>{{ind.restore}}</td>
+    <td></td>
+  </tr>
+
+  </tbody>
+</table>
+
+<pagination-controls style="margin: 20px 0 20px 0; display:block; width: 60vw" (pageChange)="p = $event"></pagination-controls>
+

@@ -1,0 +1,43 @@
+<h1 mat-dialog-title style="margin: 0 1px 1px">More Devices</h1>
+<div mat-dialog-content style="width: 45vw; padding: 0">
+  <mat-divider></mat-divider>
+  <div class="siteDiv">
+    <b>Select the site you want to move the device to.</b>
+    <br>
+    <mat-form-field appearance="outline" class="your-autocomplete-class" >
+      <input  id="custom-input" type="text" placeholder="Select a Site"  matInput [formControl]="filterControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete"  >
+        <mat-option  style="" *ngFor="let option of filteredOptions" [value]="option">
+          <div style="height: 70px;" class="optionDiv">
+            <div>
+              <b>AvaYu </b> {{ option }}
+            </div>
+            <div>
+              <span>GSTV Integration</span> <span>7 kawana street, Northco te, Auckland 0627, New zealand</span>
+            </div>
+          </div>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <div>
+      <div>
+        <b style="margin-bottom: 15px">Add device serial numbers</b>
+        <p *ngIf=" getNoOfWords()>1 ; else noServer"> {{getNoOfWords()}} devices </p>
+        <ng-template #noServer>
+          <p>Your list can be separated by new line or commas</p>
+        </ng-template>
+      </div>
+      <div>
+        <textarea autoGrow class="textareaInput" [(ngModel)]="multiLineText" rows="2"></textarea>
+      </div>
+    </div>
+
+  </div>
+  <mat-divider></mat-divider>
+</div>
+<div mat-dialog-actions>
+  <p class="CancelText" (click)="onNoClick()">Cancel</p>
+</div>
+
+

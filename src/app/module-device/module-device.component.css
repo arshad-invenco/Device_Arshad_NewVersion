@@ -1,0 +1,192 @@
+/*Tree logo colour*/
+.mat-mdc-icon-button.mat-mdc-button-base[_ngcontent-ng-c3956154242]{
+  color: #dee2e6;
+}
+/*for Child tree*/
+.example-tree[_ngcontent-ng-c2607133081]
+.mat-nested-tree-node[_ngcontent-ng-c2607133081] div[role=group][_ngcontent-ng-c2607133081]{
+  padding-left: 19px;
+}
+/*for children child tree*/
+.example-tree[_ngcontent-ng-c2607133081]
+div[role=group][_ngcontent-ng-c2607133081] > .mat-tree-node[_ngcontent-ng-c2607133081]{
+  padding-left: 20px;
+}
+
+/*d*/
+.icon-list{
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  align-items: center;
+}
+/*d*/
+
+body{
+  background: #008077;
+}
+.container{
+  width: 80%;
+}
+
+
+.mdc-button{
+  min-width: 0;
+}
+
+.innerListItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  width: -webkit-fill-available;
+}
+.mat-mdc-menu-content{
+  width: 280px;
+}
+.mdc-list-item{
+  padding: 10px;
+}
+
+.green-icon {
+  color: green;
+}
+/* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
+.green-icon svg {
+  height: 5px;
+  fill: green;
+}
+.gray-icon-inactive{
+  color: lightslategray;
+}
+.gray-icon-inactive svg{
+  fill: lightslategray;
+}
+
+.align-center-item{
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.red-icon{
+  color: red;
+}
+.red-icon svg{
+  fill: red;
+}
+
+/********   MENU   **********/
+
+/*.dropdown-custom.active  > .link:focus,*/
+/*.link:hover{*/
+/*  background-color: lightgray;*/
+/*}*/
+
+/*CheckBox size*/
+input.largerCheckbox {
+  width: 18px;
+  height: 18px;
+}
+
+.dropdown-custom{
+  position: relative;
+}
+
+.dropdown-menu-items{
+
+  /*opacity: 0; NOT REQUIRED*/
+  /*pointer-events: none;  MAY BE */
+  /*transform: translateY(-10px);*/
+  /*transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;*/
+
+  position: absolute;
+  z-index: 1000;
+  max-width: 475px;
+
+  left: -300%;
+  background-color: white;
+  width: max-content;
+  padding: .75rem;
+  top: calc(100% + .1rem);
+  border-radius: .25rem;
+  box-shadow: -3px 2px 12px 1px rgba(0, 0, 0, .2);
+}
+
+/*.dropdown-custom > .link:focus + .dropdown-menu-items {*/
+/*  opacity: 1;*/
+/*  transform: translateY(0);*/
+/*  pointer-events: auto;*/
+/*}*/
+
+
+/*//pagination*/
+.pagination{
+  --bs-pagination-padding-x:1rem;
+  --bs-pagination-border-color: 0px;
+  --bs-pagination-color: solid black;
+  --bs-pagination-font-size: 0.8rem;
+  --bs-pagination-hover-color:white;
+  --bs-pagination-hover-bg: var(--bs-link-hover-color);
+  --bs-pagination-focus-bg: var(--bs-link-hover-color);
+  --bs-pagination-focus-color: white;
+  --bs-pagination-focus-box-shadow:none;
+  padding-left: 10px;
+  padding-top: 15px;
+}
+.page-link{
+  border-radius: 4px;
+}
+
+
+/*tree*/
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+/*
+ * This padding sets alignment of the nested nodes.
+ */
+.example-tree .mat-nested-tree-node div[role=group] {
+  padding-left: 40px;
+}
+
+/*
+ * Padding for leaf nodes.
+ * Leaf nodes need to have padding so as to align with other non-leaf nodes
+ * under the same parent.
+ */
+.example-tree div[role=group] > .mat-tree-node {
+  padding-left: 40px;
+}
+
+
+/* Custom css */
+.mat-mdc-icon-button.mat-mdc-button-base{
+  left: -10px;
+}
+
+.mat-mdc-icon-button.mat-mdc-button-base {
+  --mdc-icon-button-state-layer-size: 40px;
+  width: var(--mdc-icon-button-state-layer-size);
+  height: var(--mdc-icon-button-state-layer-size);
+  padding: 0;
+}
+.mat-tree-node {
+  min-height: 0;
+}
+
+/*.mat-icon{*/
+/*  color: #dee2e6;*/
+/*}*/
+
+
+
+

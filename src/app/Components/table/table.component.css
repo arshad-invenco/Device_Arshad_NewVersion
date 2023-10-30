@@ -1,0 +1,9 @@
+th{
+  color: rgb(128, 128, 128);
+}
+
+
+.my-custom-tooltip {
+  max-width: unset !important;
+}
+

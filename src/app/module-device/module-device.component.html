@@ -1,0 +1,146 @@
+<div class="container mt-4" style="background: white">
+  <h1>Devices</h1>
+  <div class="icon-list">
+<!--    Download Icon-->
+    <mat-icon
+      matTooltip="Download CSV file based from devices"
+      matTooltipPosition="above"
+      aria-label="Button that displays a tooltip when focused or hovered over">get_app</mat-icon>
+
+<!--    Visibility Icon-->
+    <mat-icon (click)="visibilityClicked()"
+              matTooltip="Devices in hidden sites are available"
+              matTooltipPosition="above"
+              matTooltipClass="my-custom-tooltip"
+              aria-label="Button that displays a tooltip when focused or hovered over"
+              [ngStyle]="{color: isVisibilityClicked ? '#3f51b5' : '#263238' }">
+      visibility_off
+    </mat-icon>
+
+<!--    Filter-->
+    <div class="dropdown-custom" clickOutside  (clickOutside)="clickedOutside()">
+      <button
+        matTooltip="Filter Device by:"
+        matTooltipPosition="above"
+        aria-label="Button that displays a tooltip when focused or hovered over"
+        mat-button class="link" (click)="toggleMenu()" ><mat-icon >sort</mat-icon></button>
+
+      <div class="dropdown-menu-items" *ngIf="isMenuOpened">
+        <b  style="margin: 0 10px;">Filter device by:</b>
+        <mat-divider style="margin-top: 10px"></mat-divider>
+
+        <p style="margin-left: 10px; margin-top: 10px; color: lightslategray; font-size: 12px;">DEVICE STATUS</p>
+        <mat-divider></mat-divider>
+
+        <div class="innerListItem">
+          <a class="innerListItem" href="" style="text-decoration: none; color: black">
+            <div style="display: inherit">
+              <mat-icon class="green-icon">check_circle</mat-icon>
+              <p style="margin: 0 40px 0 10px;">Operational</p>
+            </div>
+          </a>
+          <div style="display: flex; align-items: center">
+            <p style="margin: 0 15px 0">25</p>
+            <input type="checkbox" class="largerCheckbox" id="vehicle1" name="vehicle1" value="Bike">
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+
+        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+          <!--          CHILD-->
+          <mat-tree-node style="padding-left: 15px" *matTreeNodeDef="let node" matTreeNodeToggle>
+            <!--            {{node.name}}-->
+            <div class="innerListItem">
+              <div style="display: inherit">
+                <p style="margin: 0 40px 0 10px;">{{node.name}}</p>
+              </div>
+              <div style="display: flex; align-items: center">
+                <p style="margin: 0 15px 0">25</p>
+                <input class="largerCheckbox" type="checkbox" id="vehicle43" name="vehicle1" value="Bike">
+              </div>
+            </div>
+          </mat-tree-node>
+          <!-- PARENT This is the tree node template for expandable nodes -->
+          <mat-nested-tree-node style="display: flex; flex-direction: column; justify-content: space-between" *matTreeNodeDef="let node; when: hasChild">
+            <div class="mat-tree-node">
+              <button mat-icon-button matTreeNodeToggle
+                      [attr.aria-label]="'Toggle ' + node.name">
+                <mat-icon class="mat-icon-rtl-mirror">
+                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                </mat-icon>
+              </button>
+              <!--              My Component     -->
+              <div class="innerListItem">
+                <div style="display: inherit">
+                  <mat-icon style="color: red">{{getValue(node.name)}}</mat-icon>
+                  <p style="margin: 0 40px 0 10px;">{{node.name}}</p>
+                </div>
+                <div style="display: flex; align-items: center">
+                  <p style="margin: 0 15px 0">25</p>
+                  <input class="largerCheckbox" type="checkbox" id="vehicle23" name="vehicle1" value="Bike">
+                </div>
+              </div>
+            </div>
+            <!-- There is inline padding applied to this div using styles.
+                This padding value depends on the mat-icon-button width.  -->
+            <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
+                 role="group" style="padding-left: 15px">
+              <ng-container matTreeNodeOutlet></ng-container>
+            </div>
+          </mat-nested-tree-node>
+        </mat-tree>
+        <mat-divider></mat-divider>
+
+
+        <div class="innerListItem">
+          <div style="display: inherit">
+            <mat-icon>cloud_off</mat-icon>
+            <p style="margin: 0 40px 0 10px;">Unknown</p>
+          </div>
+          <div style="display: flex; align-items: center">
+            <p style="margin: 0 15px 0">25</p>
+            <input class="largerCheckbox" type="checkbox" id="vehicle3" name="vehicle1" value="Bike">
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+
+        <div class="innerListItem">
+          <div style="display: inherit">
+            <mat-icon class="gray-icon-inactive">remove_circle</mat-icon>
+            <p style="margin: 0 40px 0 10px;">Inactive</p>
+          </div>
+          <div style="display: flex; align-items: center">
+            <p style="margin: 0 15px 0">25</p>
+            <input class="largerCheckbox" type="checkbox" id="vehicle4" name="vehicle1" value="Bike">
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+
+
+
+      </div>
+
+    </div>
+
+
+
+    <!--    Show More Button: which will open more-device Dialog -->
+    <button matTooltip="Show More Devices"
+            matTooltipPosition="above"
+            aria-label="Button that displays a tooltip when focused or hovered over"
+            style="height: 35px; width: 120px; padding: 0; margin: 0"
+            (click)="openDialogMoreDevices()"
+            mat-flat-button color="primary">
+      Move Devices
+    </button>
+
+  </div>
+
+
+<!--Table-->
+  <app-table></app-table>
+
+
+
+
+</div>

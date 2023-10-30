@@ -1,0 +1,50 @@
+
+.dialog-content {
+  height: 100%; /* This will make the content fill the entire dialog height */
+  /* Add any other styles you need for the dialog content here */
+}
+
+.mat-mdc-dialog-actions{
+  justify-content: end;
+}
+.mdc-dialog .mdc-dialog__content{
+  padding: 0 0 0 0;
+}
+.mat-mdc-dialog-container{
+  height: fit-content !important;
+}
+
+.mat-mdc-dialog-container{
+  height: fit-content !important;
+}
+
+
+.CancelText{
+  cursor: pointer;
+  margin: 10px 20px;
+  color: #3f51b5;
+  font-weight: 425;
+}
+.CancelText:hover{
+  color: #2b387c;
+}
+
+
+.mat-mdc-form-field{
+  width: 733px;
+}
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix{
+  padding-top: 8px;
+}
+.mat-mdc-text-field-wrapper{
+  height: 36px !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper{
+  height: 13px;
+}
+
+.textareaInput{
+  width: -webkit-fill-available;
+  resize: none;
+}

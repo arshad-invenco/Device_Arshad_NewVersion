@@ -1,0 +1,11 @@
+.display-item{
+  width: 260px;
+  height: 40px;
+  border-radius: 3px;
+  display: flex;
+}
+.display-item img{
+  margin-right: 8px;
+}
+
+

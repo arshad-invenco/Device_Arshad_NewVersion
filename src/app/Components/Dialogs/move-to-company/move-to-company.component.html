@@ -1,0 +1,26 @@
+<h1 mat-dialog-title style="margin: 0 1px 1px;">More Devices</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content style="width: 45vw; padding: 15px">
+  <div style="margin-bottom: 10px">
+    <b>Add device serial number and customer code</b>
+    <br>
+    <b style="color: #757575; font-weight: 500 ">Use the Double pipe || to separate serial number and customer code</b>
+  </div>
+
+  <div>
+    <p style="color: #757575; font-weight: 500" *ngIf=" getNoOfWords()>1 ; else noServer"> {{getNoOfWords()}} devices </p>
+    <ng-template #noServer>
+      <p style="color: #757575; font-weight: 500 " >Your list can be separated by new line or commas</p>
+    </ng-template>
+  </div>
+  <div>
+    <textarea autoGrow class="textareaInput" [(ngModel)]="multiLineText" rows="2"></textarea>
+  </div>
+
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+  <p class="CancelText" (click)="onNoClick()">Cancel</p>
+</div>
+
+
