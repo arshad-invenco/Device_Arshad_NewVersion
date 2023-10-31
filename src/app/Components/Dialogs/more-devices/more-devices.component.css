@@ -1,17 +1,11 @@
 
-
-.mat-mdc-dialog-actions{
+/*Placing cancel button left end of the container*/
+.mat-dialog-actions{
   justify-content: end;
-}
-.mdc-dialog .mdc-dialog__content{
-  padding: 0 0 0 0;
+  padding: 0 0;
 }
 
-.mdc-dialog__container{
-  align-items: baseline !important;
-  height: fit-content !important;
-}
-
+/*Styling for the two boxes in more-devices*/
 .innerItems{
   display:flex; flex-direction: column; flex: 1;
   align-items: center;
@@ -25,6 +19,7 @@
   background-color: #ddd;
 }
 
+/*Styling for Cancel text*/
 .CancelText{
   cursor: pointer;
   margin: 10px 20px;

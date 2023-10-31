@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
 import {MoveToSiteComponent} from "../move-to-site/move-to-site.component";
 import {MoveToCompanyComponent} from "../move-to-company/move-to-company.component";
@@ -28,6 +28,7 @@ export class MoreDevicesComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  // below: function will open move-to-sited dialog
   openMoveToSite() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.position = {
@@ -63,7 +64,7 @@ export class MoreDevicesComponent implements OnInit {
       this.dialogRef.close();
     }
   }
-
+  // below: function will only open move-to-company dialog after closing current dialog
   replaceDialogAsMoveToCompany() {
     // Open the new dialog
     this.openMoveToCompany();

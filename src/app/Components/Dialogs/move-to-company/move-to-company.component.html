@@ -4,11 +4,11 @@
   <div style="margin-bottom: 10px">
     <b>Add device serial number and customer code</b>
     <br>
-    <b style="color: #757575; font-weight: 500 ">Use the Double pipe || to separate serial number and customer code</b>
+    <b style="color: #757575; font-weight: 500 ">Use the Double pipe <code>||</code> to separate serial number and customer code</b>
   </div>
 
   <div>
-    <p style="color: #757575; font-weight: 500" *ngIf=" getNoOfWords()>1 ; else noServer"> {{getNoOfWords()}} devices </p>
+    <p style="color: #757575; font-weight: 500" *ngIf=" getNoOfWords()>0 ; else noServer"> {{getNoOfWords()}} devices </p>
     <ng-template #noServer>
       <p style="color: #757575; font-weight: 500 " >Your list can be separated by new line or commas</p>
     </ng-template>
@@ -20,7 +20,13 @@
 </div>
 <mat-divider></mat-divider>
 <div mat-dialog-actions>
-  <p class="CancelText" (click)="onNoClick()">Cancel</p>
+  <div>
+    <button (click)="replaceDialogAsMoreDevice()" mat-stroked-button>Back</button>
+  </div>
+  <div class="make-flex">
+    <p class="CancelText" (click)="onNoClick()">Cancel</p>
+    <button mat-flat-button [disabled]="multiLineText.length<1" color="primary">Move Devices</button>
+  </div>
 </div>
 
 

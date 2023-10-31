@@ -8,11 +8,10 @@
       <input  id="custom-input" type="text" placeholder="Select a Site"  matInput [formControl]="filterControl" [matAutocomplete]="auto">
       <mat-autocomplete #auto="matAutocomplete"  >
         <mat-option  style="" *ngFor="let option of filteredOptions" [value]="option">
-          <div style="height: 70px;" class="optionDiv">
+          <div style="" class="optionDiv">
             <div>
               <b>AvaYu </b> {{ option }}
-            </div>
-            <div>
+              <br>
               <span>GSTV Integration</span> <span>7 kawana street, Northco te, Auckland 0627, New zealand</span>
             </div>
           </div>
@@ -23,7 +22,7 @@
     <div>
       <div>
         <b style="margin-bottom: 15px">Add device serial numbers</b>
-        <p *ngIf=" getNoOfWords()>1 ; else noServer"> {{getNoOfWords()}} devices </p>
+        <p *ngIf=" getNoOfWords()>0 ; else noServer"> {{getNoOfWords()}} devices </p>
         <ng-template #noServer>
           <p>Your list can be separated by new line or commas</p>
         </ng-template>
@@ -37,7 +36,13 @@
   <mat-divider></mat-divider>
 </div>
 <div mat-dialog-actions>
-  <p class="CancelText" (click)="onNoClick()">Cancel</p>
+  <div>
+    <button (click)="replaceDialogAsMoreDevice()" mat-stroked-button>Back</button>
+  </div>
+  <div class="make-flex">
+    <p class="CancelText" (click)="onNoClick()">Cancel</p>
+    <button [disabled]="multiLineText.length<1" mat-flat-button color="primary">Move Devices</button>
+  </div>
 </div>
 
 

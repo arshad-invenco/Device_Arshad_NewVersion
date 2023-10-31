@@ -1,24 +1,5 @@
 
-.dialog-content {
-  height: 100%; /* This will make the content fill the entire dialog height */
-  /* Add any other styles you need for the dialog content here */
-}
-
-.mat-mdc-dialog-actions{
-  justify-content: end;
-}
-.mdc-dialog .mdc-dialog__content{
-  padding: 0 0 0 0;
-}
-.mat-mdc-dialog-container{
-  height: fit-content !important;
-}
-
-.mat-mdc-dialog-container{
-  height: fit-content !important;
-}
-
-
+/*Styling for Cancel text*/
 .CancelText{
   cursor: pointer;
   margin: 10px 20px;
@@ -29,22 +10,51 @@
   color: #2b387c;
 }
 
-
-.mat-mdc-form-field{
-  width: 733px;
-}
-.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix{
-  padding-top: 8px;
-}
-.mat-mdc-text-field-wrapper{
-  height: 36px !important;
+/*This will decide the height of the container*/
+.cdk-overlay-pane{
+  height: auto !important;
 }
 
-.mat-mdc-form-field-subscript-wrapper{
-  height: 13px;
+/*To move the below action buttons in dialog to left*/
+.mat-dialog-actions{
+  justify-content: space-between;
+  padding: 0 0 !important;
+  align-items: center;
+  align-content: center;
+}
+/*made cancel and the button flex*/
+.make-flex{
+  display: flex;
+  align-items: center;
+}
+/*back button bc color*/
+.mat-stroked-button{
+  background-color: rgba(0,0,0,.04);
+}
+/*make cursor not-allowed when button is disabled*/
+button[disabled]:hover {
+  cursor: not-allowed !important;
 }
 
+
+
+
+
+/*spacing for cancel text in dialog action */
+.mat-typography .CancelText{
+  margin: 0 25px 0;
+}
+
+/*Text Area input to take whole width of the container*/
 .textareaInput{
   width: -webkit-fill-available;
   resize: none;
+}
+
+code{
+  font-size: 90%;
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: #c7254e;
+  background-color: #f9f2f4;
 }
