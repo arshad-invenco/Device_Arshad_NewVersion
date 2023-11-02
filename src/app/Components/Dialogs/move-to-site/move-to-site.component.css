@@ -8,6 +8,9 @@
 .mat-typography .CancelText{
   margin: 0 25px 0;
 }
+table {
+  width: 100%;
+}
 
 /*styling for the inside of select input text, gave proper padding and all*/
 .mat-form-field-appearance-outline .mat-form-field-infix{

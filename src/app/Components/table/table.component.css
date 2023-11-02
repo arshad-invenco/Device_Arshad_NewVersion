@@ -1,9 +1,52 @@
 th{
   color: rgb(128, 128, 128);
+  font-size: 15px;
+  font-weight: 600;
 }
 
 
-.my-custom-tooltip {
-  max-width: unset !important;
+/*.my-custom-tooltip {*/
+/*  max-width: unset !important;*/
+/*}*/
+table {
+  width: 100%;
 }
 
+.table-border{
+  border-radius: 3px;
+  /*box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),*/
+  /*0 1px 8px 0 rgba(0,0,0,.14),*/
+  /*0 2px 1px -1px rgba(0,0,0,.12)*/
+}
+
+
+.mat-header-cell .cdk-header-cell .cdk-column-Device---Serial .mat-column-Device---Serial{
+  width: 10px;
+}
+
+.device-col{
+  width: 250px;
+}
+
+.mat-row .cdk-row:hover{
+  background-color: red;
+}
+
+tr.mat-row, tr.mat-footer-row{
+  height: 55px;
+}
+
+tr:hover{
+  background-color: #efefef;
+}
+
+.status-col{
+  width: 230px;
+}
+
+.location-col{
+  width: 400px;
+}
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell{
+  padding: 10px;
+}

@@ -1,3 +1,15 @@
+
+.main-container{
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),
+  0 1px 8px 0 rgba(0,0,0,.14),
+  0 2px 1px -1px rgba(0,0,0,.12);
+  padding-bottom: 20px;
+}
+#device-heading{
+  margin-left: 30px;
+  padding-top: 18px;
+}
+
 /*Tree logo colour*/
 .mat-mdc-icon-button.mat-mdc-button-base[_ngcontent-ng-c3956154242]{
   color: #dee2e6;
@@ -186,6 +198,10 @@ input.largerCheckbox {
 /*.mat-icon{*/
 /*  color: #dee2e6;*/
 /*}*/
+
+#filter-by-device{
+  margin: 0 10px;
+}
 
 
 

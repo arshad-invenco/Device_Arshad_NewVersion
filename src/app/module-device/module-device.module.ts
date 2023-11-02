@@ -24,6 +24,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AutoGrowDirective} from "../Directives/auto-grow.directive";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {AutoGrowDirective} from "../Directives/auto-grow.directive";
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ]
 })
 export class ModuleDeviceModule { }

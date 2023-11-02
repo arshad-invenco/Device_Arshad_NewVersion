@@ -1,45 +1,65 @@
 
-<table style="margin: 8px" class="table table-hover">
-  <thead>
-  <tr>
-    <th  style="width: 250px" scope="col">Device & Serial Number</th>
-    <th style="width: 250px;" scope="col">Status</th>
-    <th scope="col">Location</th>
-    <th scope="col">Device Type</th>
-    <th scope="col">Restore</th>
-    <th scope="col">Data info</th>
-  </tr>
-  </thead>
-  <tbody  *ngFor="let ind of data | paginate: {itemsPerPage: 10, currentPage: p}">
-  <tr>
-    <td>
-      <app-device-serial></app-device-serial>
-    </td>
-    <td >
-      <app-unknown
-        matTooltip="{{ind.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
-        matTooltipPosition="above"
-        matTooltipClass="my-custom-tooltip"
-        aria-label="Button that displays a tooltip when focused or hovered over"
-        *ngIf="ind.status=='unknown' "></app-unknown>
-      <app-operational matTooltip="{{ind.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
-                       matTooltipPosition="above"
-                       aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="ind.status=='operational' "></app-operational>
-      <app-inactive matTooltip="{{ind.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
-                    matTooltipPosition="above"
-                    aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="ind.status=='inactive' "></app-inactive>
-      <app-out-of-service matTooltip="{{ind.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
-                          matTooltipPosition="above"
-                          aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="ind.status=='out of service' "></app-out-of-service>
-    </td>
-    <td>{{ind.location}}</td>
-    <td>{{ind.deviceType}}</td>
-    <td>{{ind.restore}}</td>
-    <td></td>
-  </tr>
+  <table mat-table [dataSource]=" dataSource | paginate:{itemsPerPage: 7, currentPage: p}">
+    <!--  Column -->
+    <ng-container matColumnDef="Device & Serial Number">
+      <th class="device-col" mat-header-cell *matHeaderCellDef> Device & Serial Number</th>
+      <td mat-cell *matCellDef="let element">
+              <app-device-serial></app-device-serial>
+      </td>
+    </ng-container>
 
-  </tbody>
-</table>
+    <!--  Column -->
+    <ng-container matColumnDef="status">
+      <th class="status-col" mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element">
+
+              <app-unknown
+                matTooltip="{{element.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
+                matTooltipPosition="above"
+                matTooltipClass="my-custom-tooltip"
+                aria-label="Button that displays a tooltip when focused or hovered over"
+                *ngIf="element.status=='unknown' "></app-unknown>
+              <app-operational matTooltip="{{element.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
+                               matTooltipPosition="above"
+                               aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="element.status=='operational' "></app-operational>
+              <app-inactive matTooltip="{{element.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
+                            matTooltipPosition="above"
+                            aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="element.status=='inactive' "></app-inactive>
+              <app-out-of-service matTooltip="{{element.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
+                                  matTooltipPosition="above"
+                                  aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="element.status=='out of service' "></app-out-of-service>
+      </td>
+    </ng-container>
+
+    <!-- Column -->
+    <ng-container matColumnDef="location">
+      <th class="location-col" mat-header-cell *matHeaderCellDef> Location </th>
+      <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+    </ng-container>
+
+    <!-- Column -->
+    <ng-container matColumnDef="Device Type">
+      <th mat-header-cell *matHeaderCellDef> Device Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.deviceType}} </td>
+    </ng-container>
+
+    <!-- Column -->
+    <ng-container matColumnDef="restore">
+      <th mat-header-cell *matHeaderCellDef> Restore</th>
+      <td mat-cell *matCellDef="let element"> {{element.restore}} </td>
+    </ng-container>
+
+    <!-- Column -->
+    <ng-container matColumnDef="Others">
+      <th mat-header-cell *matHeaderCellDef> Others</th>
+      <td mat-cell *matCellDef="let element"> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 
 <pagination-controls style="margin: 20px 0 20px 0; display:block; width: 60vw" (pageChange)="p = $event"></pagination-controls>
+
+
 

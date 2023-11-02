@@ -1,5 +1,5 @@
-<div class="container mt-4" style="background: white">
-  <h1>Devices</h1>
+<div class="container mt-4 main-container" style="background: white">
+  <h1 id="device-heading">Devices</h1>
   <div class="icon-list">
 <!--    Download Icon-->
     <mat-icon
@@ -26,7 +26,7 @@
         mat-button class="link" (click)="toggleMenu()" ><mat-icon >sort</mat-icon></button>
 
       <div class="dropdown-menu-items" *ngIf="isMenuOpened">
-        <b  style="margin: 0 10px;">Filter device by:</b>
+        <b id="filter-by-device" >Filter device by:</b>
         <mat-divider style="margin-top: 10px"></mat-divider>
 
         <p style="margin-left: 10px; margin-top: 10px; color: lightslategray; font-size: 12px;">DEVICE STATUS</p>
