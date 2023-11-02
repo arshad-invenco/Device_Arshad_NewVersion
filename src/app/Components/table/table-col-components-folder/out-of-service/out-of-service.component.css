@@ -3,5 +3,13 @@
   align-items: center;
   align-content: center;
 }
-
-
+#col-red{
+  color: red;
+}
+#styling-out-of-service{
+  margin: 0 0 0 10px; color: red
+}
+#style-span{
+  font-weight: 400;
+  color: #757575
+}

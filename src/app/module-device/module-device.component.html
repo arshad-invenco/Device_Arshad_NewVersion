@@ -27,20 +27,20 @@
 
       <div class="dropdown-menu-items" *ngIf="isMenuOpened">
         <b id="filter-by-device" >Filter device by:</b>
-        <mat-divider style="margin-top: 10px"></mat-divider>
+        <mat-divider id="margin-top-divider"></mat-divider>
 
-        <p style="margin-left: 10px; margin-top: 10px; color: lightslategray; font-size: 12px;">DEVICE STATUS</p>
+        <p id="device-status" >DEVICE STATUS</p>
         <mat-divider></mat-divider>
 
         <div class="innerListItem">
-          <a class="innerListItem" href="" style="text-decoration: none; color: black">
-            <div style="display: inherit">
+          <a class="innerListItem" href="" id="text-d-none" >
+            <div class="inherit-style">
               <mat-icon class="green-icon">check_circle</mat-icon>
-              <p style="margin: 0 40px 0 10px;">Operational</p>
+              <p class="margin-text">Operational</p>
             </div>
           </a>
-          <div style="display: flex; align-items: center">
-            <p style="margin: 0 15px 0">25</p>
+          <div class="flex-center">
+            <p class="margin-checkbox-text"> 25 </p>
             <input type="checkbox" class="largerCheckbox" id="vehicle1" name="vehicle1" value="Bike">
           </div>
         </div>
@@ -48,20 +48,20 @@
 
         <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
           <!--          CHILD-->
-          <mat-tree-node style="padding-left: 15px" *matTreeNodeDef="let node" matTreeNodeToggle>
+          <mat-tree-node id="tree-padding" *matTreeNodeDef="let node" matTreeNodeToggle>
             <!--            {{node.name}}-->
             <div class="innerListItem">
-              <div style="display: inherit">
-                <p style="margin: 0 40px 0 10px;">{{node.name}}</p>
+              <div class="inherit-style" >
+                <p class="margin-text">{{node.name}}</p>
               </div>
-              <div style="display: flex; align-items: center">
-                <p style="margin: 0 15px 0">25</p>
+              <div class="flex-center">
+                <p class="margin-checkbox-text">25</p>
                 <input class="largerCheckbox" type="checkbox" id="vehicle43" name="vehicle1" value="Bike">
               </div>
             </div>
           </mat-tree-node>
           <!-- PARENT This is the tree node template for expandable nodes -->
-          <mat-nested-tree-node style="display: flex; flex-direction: column; justify-content: space-between" *matTreeNodeDef="let node; when: hasChild">
+          <mat-nested-tree-node id="parent-node-style" *matTreeNodeDef="let node; when: hasChild">
             <div class="mat-tree-node">
               <button mat-icon-button matTreeNodeToggle
                       [attr.aria-label]="'Toggle ' + node.name">
@@ -71,12 +71,12 @@
               </button>
               <!--              My Component     -->
               <div class="innerListItem">
-                <div style="display: inherit">
-                  <mat-icon style="color: red">{{getValue(node.name)}}</mat-icon>
-                  <p style="margin: 0 40px 0 10px;">{{node.name}}</p>
+                <div class="inherit-style" >
+                  <mat-icon class="col-red">{{getValue(node.name)}}</mat-icon>
+                  <p class="margin-text" >{{node.name}}</p>
                 </div>
-                <div style="display: flex; align-items: center">
-                  <p style="margin: 0 15px 0">25</p>
+                <div class="flex-center">
+                  <p class="margin-checkbox-text" >25</p>
                   <input class="largerCheckbox" type="checkbox" id="vehicle23" name="vehicle1" value="Bike">
                 </div>
               </div>
@@ -84,7 +84,7 @@
             <!-- There is inline padding applied to this div using styles.
                 This padding value depends on the mat-icon-button width.  -->
             <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
-                 role="group" style="padding-left: 15px">
+                 role="group" id="pl-15">
               <ng-container matTreeNodeOutlet></ng-container>
             </div>
           </mat-nested-tree-node>
@@ -93,24 +93,24 @@
 
 
         <div class="innerListItem">
-          <div style="display: inherit">
+          <div class="inherit-style" >
             <mat-icon>cloud_off</mat-icon>
-            <p style="margin: 0 40px 0 10px;">Unknown</p>
+            <p class="margin-text" >Unknown</p>
           </div>
-          <div style="display: flex; align-items: center">
-            <p style="margin: 0 15px 0">25</p>
+          <div class="flex-center" >
+            <p class="margin-checkbox-text">25</p>
             <input class="largerCheckbox" type="checkbox" id="vehicle3" name="vehicle1" value="Bike">
           </div>
         </div>
         <mat-divider></mat-divider>
 
         <div class="innerListItem">
-          <div style="display: inherit">
+          <div class="inherit-style">
             <mat-icon class="gray-icon-inactive">remove_circle</mat-icon>
-            <p style="margin: 0 40px 0 10px;">Inactive</p>
+            <p class="margin-text" >Inactive</p>
           </div>
-          <div style="display: flex; align-items: center">
-            <p style="margin: 0 15px 0">25</p>
+          <div class="flex-center">
+            <p class="margin-checkbox-text">25</p>
             <input class="largerCheckbox" type="checkbox" id="vehicle4" name="vehicle1" value="Bike">
           </div>
         </div>
@@ -127,8 +127,8 @@
     <!--    Show More Button: which will open more-device Dialog -->
     <button matTooltip="Show More Devices"
             matTooltipPosition="above"
+            class="move-device-styling"
             aria-label="Button that displays a tooltip when focused or hovered over"
-            style="height: 35px; width: 120px; padding: 0; margin: 0"
             (click)="openDialogMoreDevices()"
             mat-flat-button color="primary">
       Move Devices

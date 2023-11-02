@@ -4,3 +4,12 @@
   align-content: center;
   color: rgba(0, 0, 0, .38);
 }
+#col-unknown{
+  color: lightgray;
+}
+#margin-unknown{
+  margin: 0 0 0 10px;
+}
+#style-unknown{
+  font-weight: 400;color: #757575
+}

@@ -1,11 +1,13 @@
-.green-icon {
-  height: 5px;
-  fill: green;
-}
-
 .statusCard{
   display: flex;
   align-items: center;
   align-content: center;
   color: darkgray;
+}
+#col-green{
+  color: green;
+}
+#style-operational{
+  margin: 0 0 0 10px;
+  color: green
 }

@@ -1,16 +1,16 @@
-<h1 mat-dialog-title style="margin: 0 1px 1px;">More Devices</h1>
+<h1 mat-dialog-title id="more-device-margin-company">More Devices</h1>
 <mat-divider></mat-divider>
-<div mat-dialog-content style="width: 45vw; padding: 15px">
-  <div style="margin-bottom: 10px">
+<div mat-dialog-content id="content-styling">
+  <div id="marg">
     <b>Add device serial number and customer code</b>
     <br>
-    <b style="color: #757575; font-weight: 500 ">Use the Double pipe <code>||</code> to separate serial number and customer code</b>
+    <b class="text-style-company">Use the Double pipe <code>||</code> to separate serial number and customer code</b>
   </div>
 
   <div>
-    <p style="color: #757575; font-weight: 500" *ngIf=" getNoOfWords()>0 ; else noServer"> {{getNoOfWords()}} devices </p>
+    <p class="text-style-company" *ngIf=" getNoOfWords()>0 ; else noServer"> {{getNoOfWords()}} devices </p>
     <ng-template #noServer>
-      <p style="color: #757575; font-weight: 500 " >Your list can be separated by new line or commas</p>
+      <p class="text-style-company" >Your list can be separated by new line or commas</p>
     </ng-template>
   </div>
   <div>

@@ -1,4 +1,3 @@
-
 /*Styling for Cancel text*/
 .CancelText{
   cursor: pointer;
@@ -9,12 +8,10 @@
 .CancelText:hover{
   color: #2b387c;
 }
-
 /*This will decide the height of the container*/
 .cdk-overlay-pane{
   height: auto !important;
 }
-
 /*To move the below action buttons in dialog to left*/
 .mat-dialog-actions{
   justify-content: space-between;
@@ -36,10 +33,6 @@ button[disabled]:hover {
   cursor: not-allowed !important;
 }
 
-
-
-
-
 /*spacing for cancel text in dialog action */
 .mat-typography .CancelText{
   margin: 0 25px 0;
@@ -57,4 +50,18 @@ code{
   border-radius: 3px;
   color: #c7254e;
   background-color: #f9f2f4;
+}
+#more-device-margin-company{
+  margin: 0 1px 1px;
+}
+#content-styling{
+  width: 45vw;
+  padding: 15px
+}
+#marg{
+  margin-bottom: 10px
+}
+.text-style-company{
+  color: #757575;
+  font-weight: 500;
 }

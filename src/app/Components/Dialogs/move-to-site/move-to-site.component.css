@@ -80,5 +80,15 @@ button[disabled]:hover {
   resize: none;
 }
 
+#more-device-margin{
+  margin: 0 1px 1px;
+}
+#dialog-style{
+  width: 45vw;
+  padding: 0;
+}
+#style-serial{
+  margin-bottom: 15px;
+}
 
 

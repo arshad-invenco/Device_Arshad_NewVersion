@@ -1,14 +1,14 @@
-<h1 mat-dialog-title style="margin: 0 1px 1px">More Devices</h1>
-<div mat-dialog-content style="width: 45vw; padding: 0">
+<h1 mat-dialog-title id="more-device-margin">More Devices</h1>
+<div mat-dialog-content id="dialog-style">
   <mat-divider></mat-divider>
   <div class="siteDiv">
     <b>Select the site you want to move the device to.</b>
     <br>
     <mat-form-field appearance="outline" class="your-autocomplete-class" >
       <input  id="custom-input" type="text" placeholder="Select a Site"  matInput [formControl]="filterControl" [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete"  >
+      <mat-autocomplete #auto="matAutocomplete" >
         <mat-option  style="" *ngFor="let option of filteredOptions" [value]="option">
-          <div style="" class="optionDiv">
+          <div class="optionDiv">
             <div>
               <b>AvaYu </b> {{ option }}
               <br>
@@ -21,7 +21,7 @@
 
     <div>
       <div>
-        <b style="margin-bottom: 15px">Add device serial numbers</b>
+        <b id="style-serial">Add device serial numbers</b>
         <p *ngIf=" getNoOfWords()>0 ; else noServer"> {{getNoOfWords()}} devices </p>
         <ng-template #noServer>
           <p>Your list can be separated by new line or commas</p>

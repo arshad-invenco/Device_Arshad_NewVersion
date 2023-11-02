@@ -3,4 +3,11 @@
   align-items: center;
   align-content: center;
 }
+#col-inactive{
+  color: #607d8b;
+}
+#styling-inactive{
+  margin: 0 0 0 7px;
+  color: lightslategray
+}
 

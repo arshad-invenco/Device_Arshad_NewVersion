@@ -18,16 +18,23 @@
                 matTooltipPosition="above"
                 matTooltipClass="my-custom-tooltip"
                 aria-label="Button that displays a tooltip when focused or hovered over"
-                *ngIf="element.status=='unknown' "></app-unknown>
+                *ngIf="element.status=='unknown' ">
+              </app-unknown>
               <app-operational matTooltip="{{element.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
                                matTooltipPosition="above"
-                               aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="element.status=='operational' "></app-operational>
+                               aria-label="Button that displays a tooltip when focused or hovered over"
+                               *ngIf="element.status=='operational' ">
+              </app-operational>
               <app-inactive matTooltip="{{element.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
                             matTooltipPosition="above"
-                            aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="element.status=='inactive' "></app-inactive>
+                            aria-label="Button that displays a tooltip when focused or hovered over"
+                            *ngIf="element.status=='inactive' ">
+              </app-inactive>
               <app-out-of-service matTooltip="{{element.status}} (Mar 29, 2022 at 7:41pm (UTC+05.30))"
                                   matTooltipPosition="above"
-                                  aria-label="Button that displays a tooltip when focused or hovered over" *ngIf="element.status=='out of service' "></app-out-of-service>
+                                  aria-label="Button that displays a tooltip when focused or hovered over"
+                                  *ngIf="element.status=='out of service' ">
+              </app-out-of-service>
       </td>
     </ng-container>
 
@@ -59,7 +66,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-<pagination-controls style="margin: 20px 0 20px 0; display:block; width: 60vw" (pageChange)="p = $event"></pagination-controls>
+<pagination-controls class="paginator-styling" (pageChange)="p = $event"></pagination-controls>
 
 
 
